@@ -1,5 +1,94 @@
-# On Road Driver (ORD)
+# 🚗 On Road Driver (ORD)
 
+> On-demand professional driver service in Kerala.
+
+<p align="center">
+  <a href="https://naveenkrishnanpersonal.github.io/On-Road-Driver/">
+    <img src="./public/preview.jpg" alt="On Road Driver Website Preview">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://naveenkrishnanpersonal.github.io/On-Road-Driver/">
+    <img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-0f6b85?style=for-the-badge" alt="Live Demo">
+  </a>
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 19">
+  <img src="https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License">
+</p>
+
+## 📌 About the Project
+
+**On Road Driver (ORD)** is a modern, responsive single-page marketing website for an on-demand professional driver service in Kerala.
+
+The website allows visitors to explore available services and quickly connect for driver bookings through pre-filled WhatsApp interactions.
+
+The project focuses on:
+
+- Clean and modern UI
+- Responsive desktop and mobile layouts
+- Clear service presentation
+- Direct booking actions
+- Fast and accessible navigation
+- Professional business-focused design
+
+---
+
+## ✨ Features
+
+- 🚗 Hourly driver booking
+- 🌙 Full-day driver service
+- ✈️ Airport transfer service
+- 🛣️ Outstation trips
+- 💬 WhatsApp booking integration
+- 📞 Click-to-call contact options
+- 📧 Email contact integration
+- 📍 Location/map integration
+- ❓ FAQ accordion
+- 📱 Responsive mobile menu
+- 🔄 Scroll-spy navigation
+- ⭐ Customer reviews section
+- 🟢 Floating WhatsApp booking button
+
+---
+
+## 🖥️ Live Demo
+
+### 🌐 [Visit On Road Driver Website](https://naveenkrishnanpersonal.github.io/On-Road-Driver/)
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Usage |
+|---|---|
+| React 19 | User interface |
+| Vite | Development & build tooling |
+| JavaScript | Application logic |
+| CSS | Styling & responsive design |
+| HTML5 | Page structure |
+| GitHub Pages | Deployment |
+
+---
+
+## 📂 Project Structure
+
+```text
+On-Road-Driver/
+├── public/
+│   └── preview.jpg
+├── src/
+│   ├── components/
+│   ├── assets/
+│   └── ...
+├── .github/
+│   └── workflows/
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+├── README.md
+└── LICENSE
 A responsive, single-page website for **On Road Driver (ORD)** — an on-demand
 driver service in Kerala. A visitor can hire a driver for their car by the
 hour, the full day, an airport transfer or an outstation trip, straight from a
