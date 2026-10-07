@@ -79,7 +79,7 @@ function Hero() {
           </h1>
 
           <p className="hero__sub fade-in-up delay-1">
-            Reliable drivers for your car, whenever you need them.
+            Reliable on-demand drivers for your car, whenever you need them.
           </p>
 
           <ul className="hero__points fade-in-up delay-2">

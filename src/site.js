@@ -1,9 +1,8 @@
-/* Company details live here so the hero button, contact section and floating
+/* Contact details live here so the hero button, contact section and floating
    button can never drift apart. Update the values below in one place. */
 
 export const SITE = {
   name: "On Road Driver",
-  legalName: "Naveen Service Private Limited",
   /* Placeholder contact details - replace before launch. */
   phoneDisplay: "+91 90000 12345",
   phoneHref: "tel:+919000012345",

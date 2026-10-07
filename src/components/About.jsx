@@ -2,13 +2,13 @@ import SectionHeading from "./SectionHeading";
 import { CheckIcon } from "./icons";
 import "./About.css";
 
-/* Company story: who we are, how our drivers are vetted, and where we are
+/* Brand story: who we are, how our drivers are vetted, and where we are
    going. Services and benefits live in their own sections. */
 
 /* ---------- Who We Are ---------- */
 
 const INTRO = [
-  "ORD – On Demand Drivers is a professional on-demand driver service operated by Naveen Service Private Limited, based in Kerala.",
+  "ORD – On Demand Drivers is a professional on-demand driver service available across Kerala.",
   "We connect car owners, families, individuals, and businesses with professional, licensed, trained, and background-verified drivers whenever they need one.",
 ];
 
