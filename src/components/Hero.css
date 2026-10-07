@@ -1,0 +1,477 @@
+/* Hero: full-bleed photo with copy, a booking card and a stats bar. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1 1 auto;
+  /* Serif is confined to the headline below. */
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  /* Fill the first screen below the 117px header. */
+  height: calc(100vh - 117px);
+  min-height: 560px;
+  overflow: hidden;
+  background-color: #0b4e69;
+}
+
+/* ---------- Background ---------- */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* White scrim on the left lifts the copy away from the photo. */
+.hero__bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.46) 0%,
+    rgba(255, 255, 255, 0.26) 34%,
+    rgba(255, 255, 255, 0.06) 62%,
+    rgba(255, 255, 255, 0) 78%
+  );
+}
+
+/* ---------- Layout ---------- */
+/* Copy aligns to the 1200px container; the card sits toward the right. */
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+  padding: 3rem clamp(16px, 1.6vw, 34px) 3rem
+    max(24px, calc((100% - 1200px) / 2 + 24px));
+}
+
+.hero__content {
+  max-width: 520px;
+}
+
+.hero__book {
+  width: 300px;
+  flex: 0 0 auto;
+  border-radius: 16px;
+  background-color: #ffffff;
+  padding: 1.1rem 1.1rem;
+  box-shadow: 0 22px 48px rgba(9, 40, 60, 0.28);
+}
+
+/* ---------- Copy ---------- */
+/* Display serif for the headline, with Times as the fallback. */
+.hero__title {
+  margin: 0;
+  color: #102a43;
+  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  font-weight: 700;
+  line-height: 1.04;
+}
+
+.hero__title-line {
+  display: block;
+  font-size: clamp(2.8rem, 5.2vw, 4.2rem);
+}
+
+.hero__title-accent {
+  display: block;
+  color: #0a8396;
+  font-size: clamp(3.4rem, 6.3vw, 5.1rem);
+}
+
+.hero__sub {
+  margin: 0.9rem 0 0;
+  color: #33475b;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.hero__points {
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.hero__point {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #102a43;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.hero__point-icon {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  color: #0a8396;
+}
+
+/* ---------- Buttons ---------- */
+.hero__actions {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
+}
+
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Button icons default to the line style. */
+.hero__btn svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Solid marks opt out of the stroke styling above. */
+.hero__btn .hero__btn-icon--solid {
+  fill: currentColor;
+  stroke: none;
+}
+
+.hero__btn--primary {
+  background-color: #0a8396;
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(10, 131, 150, 0.35);
+}
+
+.hero__btn--primary:hover {
+  background-color: #0c6b7a;
+  transform: translateY(-2px);
+}
+
+/* The down arrow is reused as a right-pointing chevron. */
+.hero__btn .hero__btn-arrow {
+  width: 16px;
+  height: 16px;
+  transform: rotate(-90deg);
+}
+
+.hero__btn--whatsapp {
+  background-color: #ffffff;
+  border-color: #0a8396;
+  color: #0a8396;
+}
+
+.hero__btn--whatsapp:hover {
+  background-color: #e6f4f7;
+  transform: translateY(-2px);
+}
+
+/* ---------- Booking card ---------- */
+.hero__book-title {
+  margin: 0;
+  color: #102a43;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.hero__book-sub {
+  margin: 0.1rem 0 0.6rem;
+  color: #64748b;
+  font-size: 0.78rem;
+}
+
+.hero__trips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__trip {
+  border-top: 1px solid #e6edf4;
+}
+
+/* The whole row is the tap target, not just the chevron. */
+.hero__trip-link {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.25rem;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.hero__trip-link:hover {
+  background-color: #eaf5f8;
+}
+
+.hero__trip-link:focus-visible {
+  outline: 2px solid #0a8396;
+  outline-offset: -2px;
+}
+
+.hero__trip-icon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background-color: #e4f2f5;
+  color: #0a8396;
+}
+
+.hero__trip-icon svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero__trip-name {
+  flex: 1 1 auto;
+  color: #102a43;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero__trip-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #0a8396;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hero__trip-note {
+  color: #94a3b8;
+  font-size: 0.62rem;
+  font-weight: 500;
+}
+
+.hero__trip-chevron {
+  color: #b6c2cf;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ---------- Stats bar ---------- */
+.hero__stats {
+  position: relative;
+  z-index: 2;
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background-color: #0b2239;
+  padding: 1.25rem 4vw;
+}
+
+.hero__stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 0 1.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero__stat:first-child {
+  border-left: 0;
+}
+
+.hero__stat-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.hero__stat-value {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.hero__stat-label {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.85rem;
+}
+
+.hero__stat-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+}
+
+.hero__stat-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Solid marks (the star) are filled rather than stroked. */
+.hero__stat-icon--solid svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* ---------- Entrances ---------- */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.25s;
+}
+
+.delay-3 {
+  animation-delay: 0.4s;
+}
+
+/* ---------- Responsive ---------- */
+
+/* Desktop only: hide the booking card (mobile keeps it full width). */
+@media (min-width: 901px) {
+  .hero__book {
+    display: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero__book {
+    width: 272px;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    /* the header wraps taller on narrow screens, so let it size to content */
+    height: auto;
+    min-height: 0;
+  }
+
+  .hero__bg-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0.3) 55%,
+      rgba(255, 255, 255, 0.18) 100%
+    );
+  }
+
+  .hero__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 2.5rem 24px;
+  }
+
+  .hero__book {
+    width: 100%;
+  }
+
+  .hero__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 0;
+    padding: 1.25rem 24px;
+  }
+
+  .hero__stat {
+    padding: 0 1rem;
+  }
+
+  /* the divider only makes sense between columns, not at a row start */
+  .hero__stat:nth-child(odd) {
+    border-left: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero__title-line {
+    font-size: clamp(2.2rem, 9.5vw, 2.9rem);
+  }
+
+  .hero__title-accent {
+    font-size: clamp(2.7rem, 12vw, 3.5rem);
+  }
+
+  .hero__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

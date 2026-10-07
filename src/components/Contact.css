@@ -1,0 +1,234 @@
+.contact {
+  background-color: #ffffff;
+  background-image: url("/whitebg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5.5rem 0 6rem;
+}
+
+.contact__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Intro + WhatsApp callout ---------- */
+.contact__intro {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact__lead {
+  margin: 0;
+  max-width: 46ch;
+  color: #333333;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.contact__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 999px;
+  background-color: #25d366;
+  color: #ffffff;
+  padding: 0.8rem 1.6rem 0.8rem 0.8rem;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.32);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact__whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(37, 211, 102, 0.45);
+}
+
+.contact__whatsapp:active {
+  transform: scale(0.98);
+}
+
+.contact__whatsapp:focus-visible,
+.contact__item:focus-visible {
+  outline: 3px solid #13285b;
+  outline-offset: 3px;
+}
+
+.contact__whatsapp-badge {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #25d366;
+}
+
+.contact__whatsapp-badge svg {
+  width: 27px;
+  height: 27px;
+  fill: currentColor;
+}
+
+.contact__whatsapp-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.contact__whatsapp-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.contact__whatsapp-sub {
+  font-size: 0.85rem;
+  opacity: 0.92;
+}
+
+.contact__whatsapp-go {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* ---------- Contact tiles ---------- */
+.contact__list {
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.contact__cell {
+  display: flex;
+}
+
+.contact__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 100%;
+  border: 1.5px solid #a8c4ec;
+  border-radius: 18px;
+  background-color: #ffffff;
+  padding: 1.6rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+a.contact__item:hover {
+  transform: translateY(-6px);
+  border-color: #13285b;
+  box-shadow: 0 18px 38px rgba(19, 40, 91, 0.16);
+}
+
+/* Circular icon badge at the top of each tile. */
+.contact__icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #e8f0f9;
+  color: #13285b;
+}
+
+.contact__icon svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+  stroke: none;
+}
+
+.contact__icon--whatsapp {
+  background-color: #e3f5ec;
+  color: #1f9d55;
+}
+
+.contact__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.contact__label {
+  color: #0a8396;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact__value {
+  color: #13285b;
+  font-size: 1.1rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.contact__note {
+  color: #6b7280;
+  font-size: 0.88rem;
+}
+
+/* "Tap to call →" pinned to the bottom so the tiles line up. */
+.contact__action {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #13285b;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.contact__action-arrow {
+  transition: transform 0.2s ease;
+}
+
+a.contact__item:hover .contact__action-arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .contact {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .contact__intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .contact__whatsapp {
+    width: 100%;
+  }
+
+  .contact__whatsapp-go {
+    margin-left: auto;
+  }
+
+  .contact__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2.25rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact__list {
+    grid-template-columns: 1fr;
+  }
+}

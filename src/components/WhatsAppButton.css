@@ -1,0 +1,82 @@
+/* Floating WhatsApp button, pinned to the viewport so it is reachable from any
+   section. It collapses to a circular icon on narrow screens where the label
+   would crowd the content. */
+
+.whatsapp-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  height: 58px;
+  padding: 0 1.35rem 0 0.7rem;
+  border-radius: 999px;
+  background-color: #25d366;
+  color: #ffffff;
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.38);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn:active {
+  transform: scale(0.96);
+}
+
+.whatsapp-btn:focus-visible {
+  outline: 3px solid #13285b;
+  outline-offset: 3px;
+}
+
+.whatsapp-btn__badge {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #25d366;
+}
+
+.whatsapp-btn__glyph {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}
+
+.whatsapp-btn__label {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .whatsapp-btn {
+    right: 16px;
+    bottom: 16px;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .whatsapp-btn__label {
+    /* visually hidden but still announced to screen readers */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}

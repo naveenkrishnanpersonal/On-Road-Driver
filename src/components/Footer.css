@@ -1,0 +1,170 @@
+.footer {
+  /* Fallback colour if the image fails to load. */
+  background-color: #0d1c40;
+  background-image: url(/footer-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* footer-bg.png is a light image, so the palette is navy text. */
+  color: #0d1c40;
+  padding: 4rem 0 0;
+}
+
+.footer__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.footer__logo-link {
+  display: inline-block;
+}
+
+.footer__logo {
+  display: block;
+  width: 87px;
+  height: 60px;
+  object-fit: contain;
+  background-color: #ffffff;
+  /* a white plate would vanish against the light image, so give it an edge */
+  border: 1px solid rgba(13, 28, 64, 0.18);
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.footer__tagline {
+  margin: 1.25rem 0 1.5rem;
+  max-width: 34ch;
+  color: #0d1c40;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.footer__cta {
+  display: inline-block;
+  border-radius: 999px;
+  background-color: #e6b968;
+  color: #0d1c40;
+  padding: 0.75rem 1.8rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.footer__cta:hover {
+  background-color: #f2c983;
+  transform: translateY(-2px);
+}
+
+.footer__col-title {
+  margin: 0 0 1.1rem;
+  color: #7a4a08;
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer__links a {
+  color: #0d1c40;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer__links a:hover {
+  color: #0a8396;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  border-top: 2px solid rgba(13, 28, 64, 0.28);
+  padding: 1.4rem 0 1.8rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 0.95rem;
+}
+
+.footer__copy {
+  margin: 0;
+  color: #1c2f5e;
+  font-weight: 600;
+}
+
+.footer__legal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer__legal a {
+  color: #1c2f5e;
+  font-weight: 600;
+}
+
+.footer__legal a:hover {
+  color: #0a8396;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding-top: 3rem;
+  }
+
+  /* Phones only: enlarge the tap area of the text links. */
+  .footer__links {
+    gap: 0.15rem;
+  }
+
+  .footer__links a,
+  .footer__legal a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .footer__legal {
+    flex-wrap: wrap;
+  }
+
+  .footer__top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,77 @@
+.why {
+  background-color: #13285b;
+  padding: 5.5rem 0 6rem;
+  overflow: hidden;
+}
+
+.why__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.why__grid {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+.why__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.why__icon {
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+  border-radius: 10px;
+  background: linear-gradient(150deg, #8fa6cd 0%, #46598c 100%);
+}
+
+.why__icon svg {
+  width: 58px;
+  height: 58px;
+  fill: none;
+  stroke: #e6b968;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.why__label {
+  margin: 1.4rem 0 0;
+  color: #ffffff;
+  font-family: 'Livvic', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .why {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .why__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 1.25rem;
+  }
+
+  .why__label {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .why__grid {
+    grid-template-columns: 1fr;
+  }
+}

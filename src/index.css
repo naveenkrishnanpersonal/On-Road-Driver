@@ -1,0 +1,124 @@
+:root {
+  /* Brand theme */
+  --color-primary: #0b4e69;
+  --color-secondary: #0a8396;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Derived helpers */
+  --color-primary-dark: #093f54;
+  --color-primary-light: #0d6a8f;
+  /* Light tint of the secondary, used for accent text over dark imagery */
+  --color-secondary-light: #5fd0e2;
+
+  font-family: 'Livvic', 'Segoe UI', system-ui, -apple-system,
+    'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--color-black);
+  background-color: var(--color-white);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Stop iOS Safari from inflating text in landscape. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  /* Hide the scrollbar without disabling scrolling. */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.page::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+body,
+.page {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Respect users who ask the OS to cut animation. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Phones are touched, not clicked, so give controls a finger-sized target. */
+@media (max-width: 980px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a,
+  button,
+  select,
+  input,
+  textarea {
+    min-height: 44px;
+  }
+
+  .navbar__toggle,
+  .faq__btn {
+    min-height: 48px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* The page stretches to the viewport; the hero flexes to fill the rest. */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

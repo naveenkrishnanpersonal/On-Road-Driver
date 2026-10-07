@@ -1,0 +1,57 @@
+/* Interlocking heading. Colours are set inline; only geometry lives here. */
+
+.sec-head {
+  --heading-size: clamp(2.4rem, 5vw, 4.2rem);
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  padding: 0 4vw 2.75rem;
+}
+
+.sec-head__title {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-size: var(--heading-size);
+  font-weight: 400;
+  line-height: 0.92;
+}
+
+/* Keeps the rule centred on the main word. */
+.sec-head__top {
+  position: absolute;
+  left: 0;
+  top: calc(-0.455 * var(--heading-size));
+  font-size: calc(0.66 * var(--heading-size));
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.sec-head__main {
+  display: block;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.sec-head__rule {
+  flex: 1 1 auto;
+  height: 11px;
+  border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+  .sec-head {
+    /* Heading is nowrap, so scale it on phones to avoid horizontal scroll. */
+    --heading-size: clamp(1.75rem, 8.5vw, 2.4rem);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 0 24px 2rem;
+  }
+
+  .sec-head__rule {
+    width: 100%;
+  }
+}

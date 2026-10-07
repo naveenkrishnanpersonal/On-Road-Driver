@@ -1,0 +1,119 @@
+.faq {
+  background-color: #f2f6fb;
+  padding: 5.5rem 0 6rem;
+}
+
+.faq__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.faq__list {
+  list-style: none;
+  /* auto side margins centre the accordion inside the section */
+  margin: 1.5rem auto 0;
+  padding: 0;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq__item {
+  border: 1.5px solid #a8c4ec;
+  border-radius: 14px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.faq__q {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.faq__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1.3rem 1.6rem;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.faq__btn:hover,
+.faq__btn.is-open {
+  background-color: #e8f0f9;
+  color: #13285b;
+}
+
+.faq__btn:focus-visible {
+  outline: 2px solid #13285b;
+  outline-offset: -2px;
+}
+
+/* Plus that turns into a minus when the answer is open. */
+.faq__sign {
+  position: relative;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+.faq__sign-h,
+.faq__sign-v {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #0a8396;
+  transform: translateY(-50%);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.faq__sign-v {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.faq__btn.is-open .faq__sign-v {
+  transform: translateY(-50%) rotate(0deg);
+  opacity: 0;
+}
+
+.faq__panel {
+  padding: 0 1.6rem 1.4rem;
+}
+
+.faq__a {
+  margin: 0;
+  color: #333333;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .faq {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .faq__btn {
+    padding: 1.1rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .faq__panel {
+    padding: 0 1.2rem 1.2rem;
+  }
+}

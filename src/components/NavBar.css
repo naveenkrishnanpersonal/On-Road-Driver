@@ -1,0 +1,297 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-white);
+  transition: box-shadow 0.25s ease;
+}
+
+.navbar.is-scrolled {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
+}
+
+/* ---------- Announcement strip ---------- */
+.navbar__announce {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.82rem;
+  letter-spacing: 0.2px;
+}
+
+.navbar__announce-text {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.55rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.navbar__announce-badge {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.navbar__announce-link {
+  color: var(--color-white);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.navbar__announce-link:hover {
+  opacity: 0.75;
+}
+
+/* ---------- Main bar ---------- */
+.navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid rgba(11, 78, 105, 0.1);
+}
+
+.navbar.is-scrolled .navbar__inner {
+  border-bottom-color: transparent;
+}
+
+/* ---------- Brand ---------- */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Logo fills most of the fixed 78px bar height. */
+.navbar__brand-logo {
+  display: block;
+  height: 70px;
+  width: auto;
+  aspect-ratio: 513 / 352;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.navbar__brand:hover .navbar__brand-logo {
+  transform: scale(1.04);
+}
+
+/* ---------- Centered links ---------- */
+.navbar__links {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__links a {
+  position: relative;
+  display: inline-block;
+  color: var(--color-primary);
+  font-size: 1rem;
+  /* Livvic tops out at 700; a hairline stroke adds heft. */
+  font-weight: 700;
+  -webkit-text-stroke: 0.3px currentColor;
+  letter-spacing: 0.1px;
+  padding: 0.35rem 0;
+  transition: color 0.2s ease;
+}
+
+.navbar__links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--color-secondary);
+  transition: width 0.25s ease;
+}
+
+.navbar__links a:hover,
+.navbar__links a.is-active {
+  color: var(--color-secondary);
+}
+
+.navbar__links a:hover::after,
+.navbar__links a.is-active::after {
+  width: 100%;
+}
+
+/* ---------- Actions ---------- */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.navbar__login {
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  -webkit-text-stroke: 0.3px currentColor;
+  transition: color 0.2s ease;
+}
+
+.navbar__login:hover {
+  color: var(--color-secondary);
+}
+
+.navbar__cta {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 0.75rem 1.6rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(11, 78, 105, 0.28);
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Keep the mobile CTA white; it would otherwise inherit the link colour. */
+.navbar__mobile-actions .navbar__cta {
+  color: var(--color-white);
+}
+
+.navbar__cta:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 131, 150, 0.38);
+}
+
+/* ---------- Mobile toggle ---------- */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0 10px;
+  background: transparent;
+  border: 1px solid rgba(11, 78, 105, 0.25);
+  border-radius: 8px;
+}
+
+.navbar__toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar__toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.navbar__mobile-actions {
+  display: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .navbar__links,
+  .navbar__actions {
+    display: none;
+  }
+
+  /* Phones only: bigger tap target for the announcement link. */
+  .navbar__announce-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__inner {
+    justify-content: space-between;
+  }
+
+  .navbar__links.is-open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 1.5rem 1.5rem;
+    background-color: var(--color-white);
+    border-bottom: 1px solid rgba(11, 78, 105, 0.12);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+  }
+
+  .navbar__links.is-open li > a {
+    display: block;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(11, 78, 105, 0.08);
+  }
+
+  .navbar__links.is-open a::after {
+    display: none;
+  }
+
+  .navbar__mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+  }
+
+  .navbar__mobile-actions .navbar__cta {
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  /* mobile bar is 68px tall, so keep the logo under that */
+  .navbar__brand-logo {
+    height: 48px;
+  }
+
+  .navbar__inner {
+    height: 68px;
+  }
+
+  .navbar__announce-text {
+    font-size: 0.78rem;
+  }
+}
